@@ -1,4 +1,3 @@
-# Project Documentation
 
 ## Overview
 This project is a news website that fetches data from “https://news.api.org" and displays news articles based on user input. The website has two main sections accessible from the navbar: "News" and "Sources". Users can select a country and category to view related news and can view detailed information about individual news articles.
@@ -12,14 +11,14 @@ The project is structured as follows:
      		 ├── /routes
          		 ├── +layout.svelte
          		 ├── /news
-         	     	├── +page.svelte
-         	     	├── +page.server.ts
-         	     	└── /[slug]
+         	     	 	├── +page.svelte
+         	     		├── +page.server.ts
+         	         	└── /[slug]
          	         		├── +page.svelte
          	         		└── +page.server.ts
          	 	└── /sources
-         	     	├── +page.svelte
-         	     	└── +page.server.ts
+         	     		├── +page.svelte
+         	     		└── +page.server.ts
 
 ## Technologies Used
 * Svelte: A modern JavaScript framework for building user interfaces.
@@ -44,10 +43,10 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 ## Detailed Code Breakdown
 
 ## +layout.svelte
-### Purpose: 
+### Purpose
 * Defines the main layout of the application including the navbar and footer.
 
-### Structure:
+### Structure
 * A navbar with links to "News" and “Sources".
 * A main slot where the content of the current page will be rendered.
 * A footer with a simple copyright notice.
@@ -82,7 +81,7 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 * Fetches news articles based on the selected country and category.
 
 ### Structure:
-* Uses SvelteKit's load function to fetch data from “https://newsapi.org/docs/endpoints/top-headlines"
+* Uses SvelteKit's load function to fetch data from [news.api.org](https://newsapi.org/docs/endpoints/top-headlines)
 * Handles errors and returns the articles, selected country, and category to be used in /news +page.svelte.
 
 ## /news/[slug] +page.svelte
@@ -101,7 +100,7 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 * Fetches the detailed information of a specific news article based on the slug.
 
 ### Structure:
-* Uses SvelteKit's load function to fetch data from “https://newsapi.org/docs/endpoints/top-headlines"
+* Uses SvelteKit's load function to fetch data from [news.api.org](https://newsapi.org/docs/endpoints/top-headlines).
 * Finds the article that matches the slug and returns it to be used in /news/[slug] +page.svelte.
 
 ## Summary
@@ -114,7 +113,7 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 Sources Page: Displays a list of news sources with details such as name, description, category, and country.
 
 ## Notes
-* Replace 'your_api_key' with your actual API key from “https://newsapi.org".
+* Replace 'your_api_key' with your actual API key from [news.api.org](https://newsapi.org).
 * Ensure the slug generation in the slugify function handles all necessary characters to match the URL slugs correctly.
 * The documentation will be updated with new features.
 
