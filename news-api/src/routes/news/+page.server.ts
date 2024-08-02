@@ -5,9 +5,9 @@ import { config } from 'dotenv';
 config();
 const apiKey = process.env.NEWS_API_KEY;
 
-/** url-> url'i direkt alır ve get.('country') ile country parametresinin değerini alır  */
+/** url-> gets the url directly and gets the value of the country parameter with get.('country')  */
 export const load: PageServerLoad = async ({ fetch, url }) => {
-	const country = url.searchParams.get('country') || 'us'; // URL'den ülke kodunu al veya varsayılan olarak 'us' kullan
+	const country = url.searchParams.get('country') || 'us'; // Get the country code from the URL or use 'us' by default
 	const category = url.searchParams.get('category') || 'general';
 
 	const res = await fetch(

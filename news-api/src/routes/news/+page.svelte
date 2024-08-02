@@ -1,5 +1,5 @@
 <script>
-	export let data; /* içeriği return edilen 'news'. data.news = data.article ->> data bir prop olduğu için adını değiştiremezsin*/
+	export let data; 
 	const { news } = data; /*destructuring assignment => data = data.article*/
 	const { co } = data;
 	const { ca } = data;
