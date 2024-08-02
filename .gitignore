@@ -1,5 +1,1 @@
-news-api/src/routes/news/+page.server.ts
-news-api/src/routes/news/+page.svelte
-news-api/src/routes/news/[slug]/+page.server.ts
-news-api/src/routes/news/[slug]/+page.svelte
-news-api/src/routes/sources/+page.server.ts
+
