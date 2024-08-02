@@ -8,18 +8,19 @@ The project is structured as follows:
 
     /project-root
 
-├── /src
-├── /routes
-├── +layout.svelte
-├── /news
-├── +page.svelte
-├── +page.server.ts
-└── /[slug]
-├── +page.svelte
-└── +page.server.ts
-└── /news-sources
-├── +page.svelte
-└── +page.server.ts
+    		├── /src
+    			├── /routes
+    				├── +layout.svelte
+    				├── +page.svelte
+    				├── /news
+    					├── +page.svelte
+    					├── +page.server.ts
+    					└── /[slug]
+    						├── +page.svelte
+    						└── +page.server.ts
+    				└── /news-sources
+    					├── +page.svelte
+    					└── +page.server.ts
 
 ## Technologies Used
 
