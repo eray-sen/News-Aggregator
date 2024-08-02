@@ -10,7 +10,7 @@
 
 		<ul class="navbar-menu">
 			<li class="navbar-item"><a href="/news" class="navbar-link">News</a></li>
-			<li class="navbar-item"><a href="/sources" class="navbar-link">Sources</a></li>
+			<li class="navbar-item"><a href="/news-sources" class="navbar-link">Sources</a></li>
 		</ul>
 	</div>
 </nav>
