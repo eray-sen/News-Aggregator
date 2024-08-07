@@ -1,5 +1,5 @@
 <script>
-	export let data; 
+	export let data;
 	const { news } = data; /*destructuring assignment => data = data.article*/
 	const { co } = data;
 	const { ca } = data;

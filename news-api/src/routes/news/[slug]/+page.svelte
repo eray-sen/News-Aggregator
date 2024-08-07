@@ -1,16 +1,20 @@
-<script>
+<script lang="ts">
 	export let data; // Data from the server-side
 	const { matchedArticle } = data;
-	const { apiKey2 } = data;
+	const { shareAPiKey } = data;
+	const { shortUrl } = data;
 
-	/**
-	 * @param {string} service
-	 */
-	function handleShareButtonClick(service) {
-		const apiKey = apiKey2;
+	function handleShareButtonClick(service: string) {
+		const apiKey = shareAPiKey;
 		const link = matchedArticle.url;
 		const title = matchedArticle.title;
-		const shareUrl = `https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=${apiKey}&service=${service}&link=${link}&title=${title}`;
+		let shareUrl: string;
+
+		if (service === 'whatsapp') {
+			shareUrl = `https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=${apiKey}&service=${service}&title=${title}&link=${link}&templates[whatsapp][text]= ${title} - ${shortUrl}`;
+		} else {
+			shareUrl = `https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=${apiKey}&service=${service}&link=${link}&title=${title}`;
+		}
 
 		window.open(shareUrl, '_blank');
 	}
@@ -27,6 +31,7 @@
 	<h3>Share the news</h3>
 	<button id="facebook" on:click={() => handleShareButtonClick('facebook')}>Facebook</button>
 	<button id="x" on:click={() => handleShareButtonClick('x')}>Twitter</button>
+	<button id="whatsapp" on:click={() => handleShareButtonClick('whatsapp')}>Whatsapp</button>
 </div>
 
 <style>
@@ -65,6 +70,7 @@
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
+		border-radius: 20px;
 	}
 	button:hover {
 		background-color: #365899;
@@ -77,10 +83,11 @@
 	#x {
 		background-color: #1da1f2;
 		color: black;
-		border-radius: 20px;
 	}
 	#facebook {
 		background-color: #1877f2;
-		border-radius: 20px;
+	}
+	#whatsapp {
+		background-color: #25d366;
 	}
 </style>

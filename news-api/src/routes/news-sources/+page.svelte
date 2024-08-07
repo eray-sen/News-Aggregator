@@ -63,7 +63,7 @@
 		font-size: 16px;
 	}
 	h1 {
-		margin: 10px auto; 
+		margin: 10px auto; /** sola dayalı olan başlığı ortaladık*/
 		text-align: center;
 		background-color: #333;
 		color: white;

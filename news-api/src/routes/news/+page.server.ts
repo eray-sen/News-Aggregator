@@ -3,6 +3,7 @@ import type { PageServerLoad } from './$types';
 import { config } from 'dotenv';
 
 config();
+
 const apiKey = process.env.NEWS_API_KEY;
 
 /** url-> gets the url directly and gets the value of the country parameter with get.('country')  */
@@ -23,7 +24,7 @@ export const load: PageServerLoad = async ({ fetch, url }) => {
 
 	return {
 		news: data.articles,
-		co: country, // Kullanıcıya seçili ülke kodunu geri döndür
+		co: country,
 		ca: category
 	};
 };
