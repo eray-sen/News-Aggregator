@@ -5,7 +5,6 @@ import { config } from 'dotenv';
 config();
 const newsApiKey = process.env.NEWS_API_KEY;
 const tinyUrlApiKey = process.env.TINYURL_API_KEY;
-const shareAPiKey = process.env.SHARE_API_KEY;
 
 async function shortenUrl(longUrl: string): Promise<string> {
 	try {
@@ -69,7 +68,6 @@ export const load: PageServerLoad = async ({ params, fetch, url }) => {
 
 	return {
 		matchedArticle,
-		shortUrl,
-		shareAPiKey // to use on the client side.
+		shortUrl
 	};
 };
