@@ -16,9 +16,9 @@ The project is structured as follows:
          	         	└── /[slug]
          	         		├── +page.svelte
          	         		└── +page.server.ts
-         	 	└── /sources
-         	     		├── +page.svelte
-         	     		└── +page.server.ts
+         	 	└── /news-sources
+         	     		     ├── +page.svelte
+         	     		     └── +page.server.ts
 
 ## Technologies Used
 * Svelte: A modern JavaScript framework for building user interfaces.
@@ -87,12 +87,12 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 ## /news/[slug] +page.svelte
 ### Purpose: 
 * Displays detailed information about a selected news article.
+* Stelve buttons components to share the article on specific social media platforms.
 
 ### Structure:
 * Fetches the article based on the slug parameter from the URL.
 * Displays the article's title, description, and a button linking to the original source.
-
-
+* Shares the article on social media.
 
 
 ## /news/[slug] +page.server.ts
@@ -100,8 +100,9 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 * Fetches the detailed information of a specific news article based on the slug.
 
 ### Structure:
-* Uses SvelteKit's load function to fetch data from [news.api.org](https://newsapi.org/docs/endpoints/top-headlines).
+* Uses SvelteKit's load function to fetch data from [News API](https://newsapi.org/docs/endpoints/top-headlines).
 * Finds the article that matches the slug and returns it to be used in /news/[slug] +page.svelte.
+* Shortens the link that is in RRS format by using [TinyURL OpenAPI](https://tinyurl.com/app/dev).
 
 ## Summary
 ### Layout: 
@@ -113,9 +114,9 @@ The news details page (/news/[slug] +page.svelte) displays detailed information 
 Sources Page: Displays a list of news sources with details such as name, description, category, and country.
 
 ## Notes
-* Replace 'your_api_key' with your actual API key from [news.api.org](https://newsapi.org).
+* Replace 'your_api_key' with your actual API key from [News API](https://newsapi.org) and [TinyURL OpenAPI](https://tinyurl.com/app/dev)
 * Ensure the slug generation in the slugify function handles all necessary characters to match the URL slugs correctly.
-* The documentation will be updated with new features.
+
 
 
 											
