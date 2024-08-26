@@ -10,6 +10,17 @@
 	const short_url = shortUrl;
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={matchedArticle.description} />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={matchedArticle.description} />
+	<meta property="og:image" content={matchedArticle.urlToImage} />
+	<meta property="og:url" content={url} />
+</svelte:head>
+
 <article>
 	<h1>{matchedArticle.title}</h1>
 	<img src={matchedArticle.urlToImage} alt={matchedArticle.title} />

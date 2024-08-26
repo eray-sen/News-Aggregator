@@ -6,11 +6,24 @@
 	let selectedCountry = co;
 	let selectedCategory = ca;
 
+	export let title = `News in ${selectedCountry.toUpperCase()} - ${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}`;
+	export let description = `Get the latest ${selectedCategory} news from ${selectedCountry.toUpperCase()}. Stay informed with breaking news and updates.`;
+	export let robots = 'index, follow';
+	export let viewport = 'width=device-width, initial-scale=1.0';
+
 	const fetchNews = async () => {
 		window.location.search = `?country=${selectedCountry}&category=${selectedCategory}`; // Reload the page with the new country code.
 	};
 </script>
 
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta name="robots" content={robots} />
+	<meta name="viewport" content={viewport} />
+</svelte:head>
+
+<!-- This renders the rest of your page content -->
 <div class="container">
 	<div class="header">
 		<h1>News</h1>

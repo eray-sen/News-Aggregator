@@ -2,8 +2,17 @@
 	export let data;
 
 	const { sources } = data;
-	console.log(sources);
 </script>
+
+<svelte:head>
+	<title>News Sources</title>
+	<meta
+		name="description"
+		content="Discover various news sources categorized by country and category. Explore and stay updated with the latest news from around the world."
+	/>
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</svelte:head>
 
 <h1>Sources</h1>
 

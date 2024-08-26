@@ -1,10 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html amp lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<script async src="https://cdn.ampproject.org/v0.js"></script>
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+
+		<style amp-boilerplate>
+			body {
+				visibility: hidden;
+			}
+		</style>
+		<noscript>
+			<style amp-boilerplate>
+				body {
+					visibility: visible;
+				}
+			</style>
+		</noscript>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
